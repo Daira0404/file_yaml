@@ -1,19 +1,19 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: recipesapi-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: 
+      app: recipesapi
   template:
     metadata:
       labels:
-        app: 
+        app: recipesapi
     spec:
       containers:
-        - name: 
-          image: 
+        - name: recipe
+          image: 132900311735.dkr.ecr.us-east-1.amazonaws.com/daira:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8000
